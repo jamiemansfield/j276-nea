@@ -3,7 +3,8 @@ package me.jamiemansfield.csnea.phase.command;
 import me.jamiemansfield.csnea.Difficulty;
 import me.jamiemansfield.csnea.FergusMain;
 import me.jamiemansfield.csnea.Grade;
-import me.jamiemansfield.csnea.Subject;
+import me.jamiemansfield.csnea.xml.Subject;
+import me.jamiemansfield.csnea.cli.CommandArgsReader;
 import me.jamiemansfield.csnea.cli.CommandDispatcher;
 import me.jamiemansfield.csnea.xml.Attempt;
 import me.jamiemansfield.csnea.xml.Question;
@@ -34,8 +35,9 @@ public final class LoggedInPhaseCommands {
                 return;
             }
 
-            final String rawSubject    = args.getArgs().get(0);
-            final String rawDifficulty = args.getArgs().get(1);
+            final CommandArgsReader reader = new CommandArgsReader(args);
+            final String rawSubject    = reader.next();
+            final String rawDifficulty = reader.next();
 
             // Validate the student's input
             final Optional<Subject>    subject    = Subject.get(rawSubject);

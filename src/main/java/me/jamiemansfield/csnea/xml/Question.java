@@ -1,12 +1,13 @@
 package me.jamiemansfield.csnea.xml;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * A JAXB model for a question.
@@ -20,7 +21,7 @@ public class Question {
     @XmlElementWrapper @XmlElement(name = "answer") private final List<String> answers;
 
     /**
-     * A parameter-less construction for the use of JAXB.
+     * A parameter-less constructor for the use of JAXB.
      */
     private Question () {
         // These values are null, as JAXB will initialise them

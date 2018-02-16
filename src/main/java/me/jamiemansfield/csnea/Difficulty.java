@@ -1,6 +1,5 @@
 package me.jamiemansfield.csnea;
 
-import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;
@@ -8,7 +7,7 @@ import java.util.Optional;
 /**
  * An enumeration used to represent the difficulty of a quiz.
  */
-public enum Difficulty implements Serializable {
+public enum Difficulty {
 
     EASY  ("easy"  , 2),
     MEDIUM("medium", 3),

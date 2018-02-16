@@ -3,7 +3,7 @@ package me.jamiemansfield.csnea.phase;
 import me.jamiemansfield.csnea.Difficulty;
 import me.jamiemansfield.csnea.FergusMain;
 import me.jamiemansfield.csnea.Grade;
-import me.jamiemansfield.csnea.Subject;
+import me.jamiemansfield.csnea.xml.Subject;
 import me.jamiemansfield.csnea.cli.Command;
 import me.jamiemansfield.csnea.cli.CommandArgs;
 import me.jamiemansfield.csnea.cli.CommandDispatcher;
@@ -55,7 +55,7 @@ public enum ReportGenerator {
             writer.println("## Quiz Attempts");
             student.getAttempts().forEach(attempt -> {
                 writer.println(String.format("- %s:%s GRADE: %s",
-                        attempt.getSubject().getId(),
+                        attempt.getSubject(),
                         attempt.getDifficulty().getId(),
                         Grade.of(attempt.getPercentage()).getText()
                 ));
@@ -104,7 +104,7 @@ public enum ReportGenerator {
             // Only get attempts for the correct quiz!
             final List<Attempt> attempts = new ArrayList<>();
             tempAttempts.stream()
-                    .filter(attempt -> Objects.equals(attempt.getSubject(), subject.get()))
+                    .filter(attempt -> Objects.equals(attempt.getSubject(), subject.get().getId()))
                     .filter(attempt -> Objects.equals(attempt.getDifficulty(), difficulty.get()))
                     .forEach(attempts::add);
 

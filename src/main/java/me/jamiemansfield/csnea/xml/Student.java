@@ -1,5 +1,16 @@
 package me.jamiemansfield.csnea.xml;
 
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -8,12 +19,6 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
-import java.util.*;
 
 /**
  * A JAXB model for a student.
@@ -118,7 +123,7 @@ public class Student {
     @XmlElement(name = "attempt") private final List<Attempt> attempts;
 
     /**
-     * A parameter-less construction for the use of JAXB.
+     * A parameter-less constructor for the use of JAXB.
      */
     public Student() {
         // These values are null/defaults, as JAXB will initialise

@@ -2,6 +2,12 @@ package me.jamiemansfield.csnea.xml;
 
 import me.jamiemansfield.csnea.Difficulty;
 
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -9,11 +15,6 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * A JAXB model for the question definition file, used to house
@@ -81,7 +82,7 @@ public class QuestionDefinitions {
     @XmlElement private final List<Question> hard;
 
     /**
-     * A parameter-less construction for the use of JAXB.
+     * A parameter-less constructor for the use of JAXB.
      */
     private QuestionDefinitions() {
         // These values are null, as JAXB will initialise them

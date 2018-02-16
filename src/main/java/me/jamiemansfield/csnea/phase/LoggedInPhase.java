@@ -4,6 +4,7 @@ import me.jamiemansfield.csnea.cli.CommandDispatcher;
 import me.jamiemansfield.csnea.phase.command.CommonCommands;
 import me.jamiemansfield.csnea.phase.command.LoggedInPhaseCommands;
 import me.jamiemansfield.csnea.xml.Student;
+import me.jamiemansfield.csnea.xml.Subject;
 
 import java.util.Arrays;
 
@@ -25,9 +26,14 @@ public class LoggedInPhase implements Phase<Student> {
         Arrays.asList(
                 "Welcome to Fergus' Quiz",
                 "",
-                "Available Subjects:",
-                "  maths",
-                "  computer-science",
+                "Available Subjects:"
+        ).forEach(System.out::println);
+
+        Subject.values().forEach(subject -> {
+            System.out.println("  " + subject.getId());
+        });
+
+        Arrays.asList(
                 "",
                 "Commands:",
                 "  quiz <subject> <difficulty>",

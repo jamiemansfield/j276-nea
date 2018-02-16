@@ -1,7 +1,6 @@
 package me.jamiemansfield.csnea.xml;
 
 import me.jamiemansfield.csnea.Difficulty;
-import me.jamiemansfield.csnea.Subject;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -21,12 +20,12 @@ public class Attempt {
         return new Builder();
     }
 
-    @XmlAttribute private final Subject    subject;
+    @XmlAttribute private final String     subject;
     @XmlAttribute private final Difficulty difficulty;
     @XmlAttribute private final int        percentage;
 
     /**
-     * A parameter-less construction for the use of JAXB.
+     * A parameter-less constructor for the use of JAXB.
      */
     private Attempt() {
         // These values are null, as JAXB will initialise them
@@ -44,17 +43,17 @@ public class Attempt {
      * @param percentage The percentage the student attained
      */
     private Attempt(final Builder builder, final int percentage) {
-        this.subject    = builder.subject;
+        this.subject    = builder.subject.getId();
         this.difficulty = builder.difficulty;
         this.percentage = percentage;
     }
 
     /**
-     * Gets the student of which the quiz attempt was made at.
+     * Gets the subject of which the quiz attempt was made at.
      *
      * @return The subject
      */
-    public final Subject getSubject() {
+    public final String getSubject() {
         return this.subject;
     }
 

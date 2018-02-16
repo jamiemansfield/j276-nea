@@ -3,6 +3,7 @@ package me.jamiemansfield.csnea;
 import me.jamiemansfield.csnea.phase.LoginPhase;
 import me.jamiemansfield.csnea.phase.Phase;
 import me.jamiemansfield.csnea.xml.Student;
+import me.jamiemansfield.csnea.xml.Subject;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,7 +46,12 @@ public final class FergusMain {
     /**
      * The path that the 'students.xml' file will be found.
      */
-    private static final Path STUDENTS_XML = Paths.get("students.xml");
+    public static final Path STUDENTS_XML = Paths.get("students.xml");
+
+    /**
+     * The path that the 'subjects.xml' file will be found.
+     */
+    public static final Path SUBJECTS_XML = Paths.get("subjects.xml");
 
     /**
      * The login phase.
@@ -76,6 +82,9 @@ public final class FergusMain {
         } catch (final IOException ex) {
             throw new RuntimeException("Failed to open the students.xml file!", ex);
         }
+
+        // Initialise subjects registry
+        Subject.init();
 
         // Enter the login phase
         this.currentPhase.enter();

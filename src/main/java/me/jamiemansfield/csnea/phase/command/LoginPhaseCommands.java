@@ -1,6 +1,7 @@
 package me.jamiemansfield.csnea.phase.command;
 
 import me.jamiemansfield.csnea.FergusMain;
+import me.jamiemansfield.csnea.cli.CommandArgsReader;
 import me.jamiemansfield.csnea.cli.CommandDispatcher;
 import me.jamiemansfield.csnea.phase.LoggedInPhase;
 import me.jamiemansfield.csnea.xml.Student;
@@ -26,8 +27,9 @@ public final class LoginPhaseCommands {
                 return;
             }
 
-            final String rawUsername = args.getArgs().get(0);
-            final String rawPassword = args.getArgs().get(1);
+            final CommandArgsReader reader = new CommandArgsReader(args);
+            final String rawUsername = reader.next();
+            final String rawPassword = reader.next();
 
             // See if a user of that name exists
             if (!FergusMain.get().hasStudentOfUsername(rawUsername)) {
