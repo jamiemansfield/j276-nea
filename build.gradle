@@ -18,7 +18,7 @@ jar {
         attributes(
                 'Implementation-Title': "Fergus' Quiz",
                 'Implementation-Version': version,
-                'Main-Class': 'me.jamiemansfield.school.csnea.FergusMain'
+                'Main-Class': 'me.jamiemansfield.csnea.FergusMain'
         )
     }
 }
