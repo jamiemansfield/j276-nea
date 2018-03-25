@@ -1,4 +1,4 @@
-package me.jamiemansfield.csnea.cli;
+package me.jamiemansfield.csnea.command;
 
 import java.util.*;
 

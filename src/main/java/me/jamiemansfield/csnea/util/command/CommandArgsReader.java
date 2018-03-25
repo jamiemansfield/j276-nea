@@ -1,4 +1,6 @@
-package me.jamiemansfield.csnea.cli;
+package me.jamiemansfield.csnea.util.command;
+
+import me.jamiemansfield.csnea.command.CommandArgs;
 
 import java.util.NoSuchElementException;
 

@@ -1,6 +1,8 @@
-package me.jamiemansfield.csnea.xml;
+package me.jamiemansfield.csnea.model;
 
 import static me.jamiemansfield.csnea.FergusMain.SUBJECTS_XML;
+
+import me.jamiemansfield.csnea.util.StringIdentifiable;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,7 +16,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
 
 import javax.xml.bind.JAXBContext;
@@ -28,10 +29,10 @@ import javax.xml.bind.annotation.XmlSeeAlso;
 
 /**
  * A representation of a subject. This will allow Fergus to add or
- * remove subjects as he see's fit without modifying the codebase.
+ * remove subjects as he sees fit without modifying the codebase.
  */
 @XmlRootElement
-public class Subject {
+public class Subject implements StringIdentifiable {
 
     private static final Map<String, Subject> REGISTRY = new HashMap<>();
 
@@ -95,9 +96,7 @@ public class Subject {
      * @return The subject, wrapped in an {@link Optional}
      */
     public static Optional<Subject> get(final String rawSubject) {
-        return values().stream()
-                .filter(subject -> Objects.equals(subject.id, rawSubject))
-                .findFirst();
+        return Optional.ofNullable(REGISTRY.get(rawSubject));
     }
 
     /**
@@ -188,6 +187,7 @@ public class Subject {
      *
      * @return The subject's identifier
      */
+    @Override
     public final String getId() {
         return this.id;
     }

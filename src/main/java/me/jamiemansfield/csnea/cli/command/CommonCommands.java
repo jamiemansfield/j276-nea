@@ -1,7 +1,7 @@
-package me.jamiemansfield.csnea.phase.command;
+package me.jamiemansfield.csnea.cli.command;
 
 import me.jamiemansfield.csnea.FergusMain;
-import me.jamiemansfield.csnea.cli.CommandDispatcher;
+import me.jamiemansfield.csnea.command.CommandDispatcher;
 
 /**
  * A class used for registering common commands.

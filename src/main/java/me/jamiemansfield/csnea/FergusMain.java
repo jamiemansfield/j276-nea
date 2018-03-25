@@ -1,9 +1,9 @@
 package me.jamiemansfield.csnea;
 
-import me.jamiemansfield.csnea.phase.LoginPhase;
-import me.jamiemansfield.csnea.phase.Phase;
-import me.jamiemansfield.csnea.xml.Student;
-import me.jamiemansfield.csnea.xml.Subject;
+import me.jamiemansfield.csnea.cli.LoginPhase;
+import me.jamiemansfield.csnea.cli.Phase;
+import me.jamiemansfield.csnea.model.Student;
+import me.jamiemansfield.csnea.model.Subject;
 
 import java.io.IOException;
 import java.io.InputStream;

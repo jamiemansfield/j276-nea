@@ -1,6 +1,6 @@
-package me.jamiemansfield.csnea.phase;
+package me.jamiemansfield.csnea.cli;
 
-import me.jamiemansfield.csnea.cli.CommandDispatcher;
+import me.jamiemansfield.csnea.command.CommandDispatcher;
 
 /**
  * An interface used to describe a phase, a phase being a specific state

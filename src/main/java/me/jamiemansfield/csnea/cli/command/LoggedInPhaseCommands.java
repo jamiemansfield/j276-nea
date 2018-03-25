@@ -1,14 +1,14 @@
-package me.jamiemansfield.csnea.phase.command;
+package me.jamiemansfield.csnea.cli.command;
 
 import me.jamiemansfield.csnea.Difficulty;
 import me.jamiemansfield.csnea.FergusMain;
 import me.jamiemansfield.csnea.Grade;
-import me.jamiemansfield.csnea.xml.Subject;
-import me.jamiemansfield.csnea.cli.CommandArgsReader;
-import me.jamiemansfield.csnea.cli.CommandDispatcher;
-import me.jamiemansfield.csnea.xml.Attempt;
-import me.jamiemansfield.csnea.xml.Question;
-import me.jamiemansfield.csnea.xml.Student;
+import me.jamiemansfield.csnea.model.Subject;
+import me.jamiemansfield.csnea.util.command.CommandArgsReader;
+import me.jamiemansfield.csnea.command.CommandDispatcher;
+import me.jamiemansfield.csnea.model.Attempt;
+import me.jamiemansfield.csnea.model.Question;
+import me.jamiemansfield.csnea.model.Student;
 
 import java.util.Arrays;
 import java.util.List;

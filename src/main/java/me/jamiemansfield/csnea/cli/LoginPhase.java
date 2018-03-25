@@ -1,8 +1,8 @@
-package me.jamiemansfield.csnea.phase;
+package me.jamiemansfield.csnea.cli;
 
-import me.jamiemansfield.csnea.cli.CommandDispatcher;
-import me.jamiemansfield.csnea.phase.command.CommonCommands;
-import me.jamiemansfield.csnea.phase.command.LoginPhaseCommands;
+import me.jamiemansfield.csnea.command.CommandDispatcher;
+import me.jamiemansfield.csnea.cli.command.CommonCommands;
+import me.jamiemansfield.csnea.cli.command.LoginPhaseCommands;
 
 import java.util.Arrays;
 

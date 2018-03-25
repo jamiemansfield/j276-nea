@@ -1,4 +1,4 @@
-package me.jamiemansfield.csnea.cli;
+package me.jamiemansfield.csnea.command;
 
 /**
  * An interface used to describe a command, in the command system.

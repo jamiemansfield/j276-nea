@@ -1,13 +1,14 @@
 package me.jamiemansfield.csnea;
 
-import java.util.Arrays;
-import java.util.Objects;
+import me.jamiemansfield.csnea.util.Identifiable;
+import me.jamiemansfield.csnea.util.StringIdentifiable;
+
 import java.util.Optional;
 
 /**
  * An enumeration used to represent the difficulty of a quiz.
  */
-public enum Difficulty {
+public enum Difficulty implements StringIdentifiable {
 
     EASY  ("easy"  , 2),
     MEDIUM("medium", 3),
@@ -45,6 +46,7 @@ public enum Difficulty {
      *
      * @return The difficulty's identifier
      */
+    @Override
     public final String getId() {
         return this.id;
     }
@@ -67,9 +69,7 @@ public enum Difficulty {
      * @return The difficulty, wrapped in an {@link Optional}
      */
     public static Optional<Difficulty> get(final String rawDifficulty) {
-        return Arrays.stream(values())
-                .filter(difficulty -> Objects.equals(difficulty.id, rawDifficulty))
-                .findFirst();
+        return Identifiable.getById(values(), rawDifficulty);
     }
 
 }

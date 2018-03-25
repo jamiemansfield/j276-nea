@@ -1,14 +1,14 @@
-package me.jamiemansfield.csnea.phase;
+package me.jamiemansfield.csnea.cli;
 
 import me.jamiemansfield.csnea.Difficulty;
 import me.jamiemansfield.csnea.FergusMain;
 import me.jamiemansfield.csnea.Grade;
-import me.jamiemansfield.csnea.xml.Subject;
-import me.jamiemansfield.csnea.cli.Command;
-import me.jamiemansfield.csnea.cli.CommandArgs;
-import me.jamiemansfield.csnea.cli.CommandDispatcher;
-import me.jamiemansfield.csnea.xml.Attempt;
-import me.jamiemansfield.csnea.xml.Student;
+import me.jamiemansfield.csnea.model.Subject;
+import me.jamiemansfield.csnea.command.Command;
+import me.jamiemansfield.csnea.command.CommandArgs;
+import me.jamiemansfield.csnea.command.CommandDispatcher;
+import me.jamiemansfield.csnea.model.Attempt;
+import me.jamiemansfield.csnea.model.Student;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -28,7 +28,7 @@ public enum ReportGenerator {
 
     /**
      * A report generator that will produce a report for a given
-     * {@link me.jamiemansfield.csnea.xml.Student}.
+     * {@link me.jamiemansfield.csnea.model.Student}.
      */
     STUDENT("student") {
         @Override

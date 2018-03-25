@@ -1,10 +1,10 @@
-package me.jamiemansfield.csnea.phase.command;
+package me.jamiemansfield.csnea.cli.command;
 
 import me.jamiemansfield.csnea.FergusMain;
-import me.jamiemansfield.csnea.cli.CommandArgsReader;
-import me.jamiemansfield.csnea.cli.CommandDispatcher;
-import me.jamiemansfield.csnea.phase.LoggedInPhase;
-import me.jamiemansfield.csnea.xml.Student;
+import me.jamiemansfield.csnea.util.command.CommandArgsReader;
+import me.jamiemansfield.csnea.command.CommandDispatcher;
+import me.jamiemansfield.csnea.cli.LoggedInPhase;
+import me.jamiemansfield.csnea.model.Student;
 
 /**
  * A class used to register all of the login phase commands,

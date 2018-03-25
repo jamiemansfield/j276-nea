@@ -1,4 +1,4 @@
-package me.jamiemansfield.csnea.xml;
+package me.jamiemansfield.csnea.model;
 
 import java.io.InputStream;
 import java.io.OutputStream;
