@@ -102,18 +102,14 @@ public enum ReportGenerator {
                     + subject.get().getId() + ":" + difficulty.get().getId());
             writer.println();
 
-            // Get all of the attempts for every student
-            final List<Attempt> tempAttempts = new ArrayList<>();
-            FergusMain.get().getStudents().stream()
+            // Get all of the attempts for every student but only
+            // for the correct quiz
+            final List<Attempt> attempts = FergusMain.get().getStudents().stream()
                     .map(Student::getAttempts)
-                    .forEach(tempAttempts::addAll);
-
-            // Only get attempts for the correct quiz!
-            final List<Attempt> attempts = new ArrayList<>();
-            tempAttempts.stream()
+                    .flatMap(List::stream)
                     .filter(attempt -> Objects.equals(attempt.getSubject(), subject.get().getId()))
                     .filter(attempt -> Objects.equals(attempt.getDifficulty(), difficulty.get()))
-                    .forEach(attempts::add);
+                    .collect(Collectors.toList());
 
             // Use the SE 8 Stream API to get the average percentage attained
             attempts.stream()
